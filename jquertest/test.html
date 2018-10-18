@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("p").hover(function(){
+					 $(this).css("background-color","red");
+				},function(){
+					 $(this).css("background-color","");
+				});
+				$("[value=toggle]").click(function(){
+					$("img").toggle(5000);
+				});
+				$("[value=hiden]").click(function(){
+					$("img").hide(5000);
+				});
+				
+				$("[value=show]").click(function(){
+					$("img").show(5000);
+				});
+				
+			})
+		</script>
+	</head>
+	<body>
+     <input type="button" value="show">
+	<input type="button" value="hiden">
+	<input type="button" value="toggle">
+		<br>
+			<img src="img/照片1.jpg" />
+	 <p>p标签的内容2</p>
+			    <p>p标签的内容2</p>
+			    <p>p标签的内容2</p>
+	</body>
+</html>

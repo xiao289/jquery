@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$("[value=add]").click(function(){
+					//1.创建一个jquery图片对象
+				     var img1=$("<img src='img/照片1.jpg' width='200px' height='200px'>");
+				    //2.将这个图片对象添加到对应位置
+				  $("div").before(img1);//$("div").after(img1);//$(img1).appendTo("div");  //  $("div").append(img1);
+				 // $("div").prepend(img1);
+				});
+				$("img").click(function(){
+					$(this).css("border","5px white solid");
+				});
+				$("[value=replace]").click(function(){
+					var img1=$("<img src='img/照片1.jpg' width='200px' height='200px'>");
+					//替换
+					$(img1).replaceAll("img");//$("img").replaceWith(img1);
+				});
+				$("[value=clone]").click(function(){
+					var newimg=$("img").clone(true);
+					$("div").append(newimg);
+				});
+				
+					$("[value=remove]").click(function(){
+					    $("div").remove();   
+				    });
+					$("[value=empty]").click(function(){
+					    $("div").empty();   
+				});
+				
+				$("[value='修改']").click(function(){
+					//var t=$(this).attr("value");
+					//alert(t);
+					//$(this).attr("value","确定");
+					var img1=$("img");
+					var width=img1.width();
+					var height=img1.height();
+				  img1.attr({"width":width*2,"height":height*2});
+				});
+				
+				//$("body").children().css("color","red");
+				$(".b1").click(function(){
+					// $(this).prev().css("background-color","red");
+					//$(this).siblings().css("background-color","red");
+					//$(this).parent().css("background-color","yellow");
+					   var offset=$(this).offset();
+					   alert("距离左侧:"+offset.left+",距离顶部："+offset.top);
+					//$(this).parents("table").css("background-color","yellow");
+				});
+			})
+			
+		</script>
+
+	</head>
+	<body>
+		
+		<span>aaaaaa</span>
+		<h3>hhhhhhhhh<span >aaaaaaaaaaaaa</span>hhhhhhhhh</h3>
+		
+		
+		<table border="1" cellspacing="0" width="200px" height="200px">
+			<tr>
+				  <td>111</td>
+				  <td>111</td>
+			</tr>
+				<tr>
+				  <td>222</td>
+				  <td>222</td>
+			</tr>
+				<tr class="b1">
+				  <td>333</td>
+				  <td>333</td>
+			</tr>
+				<tr>
+				  <td>444</td>
+				  <td>444</td>
+			</tr>
+				<tr>
+				  <td>555</td>
+				  <td>555</td>
+			</tr>
+			
+		</table>
+		
+		
+		
+		
+		
+		
+		<hr>
+		<input type="button" value="修改">
+		<input type="button" value="add" />
+		<input type="button" value="replace" />
+		<input type="button" value="clone" />
+		<input type="button" value="remove" />
+		<input type="button" value="empty" />
+	<div style="width: 800px; height: 600px; background-color: red;">
+	  <img src="img/照片2.jpg" width="200px" height="200px" />
+	</div>
+	</body>
+</html>

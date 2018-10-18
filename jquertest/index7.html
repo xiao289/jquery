@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				  /*$("p").mouseover(function(){
+				  	   $(this).css("background-color","red");
+				  });
+				  $("p").mouseout(function(){
+				  	$(this).css("background-color","");
+				  });*/
+				// $("p").bind("mouseover",function(){ $(this).css("background-color","red")});
+				/*$("p").bind({"mouseover":function(){
+					 $(this).css("background-color","red");
+				},
+				             "mouseout":function(){
+				             	$(this).css("background-color","");
+				}});*/
+				$("p").hover(function(){
+					 $(this).css("background-color","red");
+				},function(){
+					 $(this).css("background-color","");
+				});
+				 //判断是否按回车键
+				 $(document).keydown(function(a1){
+				 	  if(a1.keyCode==13){
+				 	  	 alert("按下的是回车键");
+				 	  	 document.forms[0].submit();
+				 	  }
+				 });
+				 
+				 //当光标离开时，给文本框加边框线
+				 $("[name='username']").blur(function(){
+				 	  $(this).css("border","2px red solid");
+				 });
+				  $("[name='username']").focus(function(){
+				 	  $(this).css("border","");
+				 });
+				 
+				 //当光标定位到文本框中，清空当前文本框“请输入用户名”的文字
+				 $("[name=username]").focus(function(){
+				 	  var txt=$(this).val();
+				 	  //alert("txt="+txt);
+				 	  if(txt=="请输入用户名"){
+				 	  	  $(this).val("");
+				 	  }
+				 	
+				 });
+				 
+				 $("[name=username]").blur(function(){
+				 	  var txt=$(this).val();
+				 	  if($.trim(txt)==""){
+				 	  	  $(this).val("请输入用户名");
+				 	  }
+				 });
+				 
+				 $("[value='移除事件']").click(function(){
+				 	//  $("p").unbind(); 移除所有事件
+				 	$("p").unbind("mouseout");
+				 });
+				 
+				 //变换背景颜色
+				 $(document).toggle(
+				 	function(){$("body").css("background-color","red");},
+				 	function(){$("body").css("background-color","green");},
+				 	function(){$("body").css("background-color","yellow");}
+				 );
+				$("[value=hiden]").click(function(){
+					$("img").hide(5000);
+				});
+				$("[value=show]").click(function(){
+					$("img").show(5000);
+				});
+				$("[value=toggle]").click(function(){
+					$("img").toggle(5000);
+				});
+				$("[value=fadeout]").click(function(){
+					$("img").fadeOut(5000);
+				});
+				$("[value=fadein]").click(function(){
+					$("img").fadeIn(5000);
+				});
+				$("[value=slidedown]").click(function(){
+					$("img").slideDown(5000);
+				});
+				$("[value=slideup]").click(function(){
+					$("img").slideUp(5000);
+				});
+				
+				$("h1").hover(function(){
+					$(this).next().slideDown();
+				},function(){
+					$(this).next().slideUp();
+				});
+			});
+			
+		</script>
+		<style type="text/css">
+			.a1{display: none;}
+		</style>
+	</head>
+	<body>
+	<input type="button" value="移除事件">
+	<input type="button" value="show">
+	<input type="button" value="hiden">
+	<input type="button" value="toggle">
+	<input type="button" value="fadein">
+	<input type="button" value="fadeout">
+	<input type="button" value="slidedown">
+	<input type="button" value="slideup"><br>
+		<img src="img/照片1.jpg" />
+		<div>
+			<h1>标题1</h1>
+			<div class="a1">
+				<p>p标签的内容1</p>
+				<p>p标签的内容1</p>
+				<p>p标签的内容1</p>
+			</div>
+			<h1>标题2</h1>
+			<div class="a1">
+			    <p>p标签的内容2</p>
+			    <p>p标签的内容2</p>
+			    <p>p标签的内容2</p>
+		    </div>
+		    <h1>标题3</h1>
+		    <div class="a1">
+				<p>p标签的内容3</p>
+				<p>p标签的内容3</p>
+				<p>p标签的内容3</p>
+			</div>
+			<h1>标题4</h1>
+			<div class="a1">
+				<p>p标签的内容4</p>
+				<p>p标签的内容4</p>
+				<p>p标签的内容4</p>
+			</div>
+		</div>
+		<form action="index4.html" method="get">
+			名字:<input type="text" value="请输入用户名" name="username">
+			 
+			<input type="submit" value="提交">
+		</form>
+		
+		
+		
+		
+	</body>
+</html>

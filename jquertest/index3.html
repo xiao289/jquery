@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+			  //$("li:first").css("background-color","red");
+			 // $("ul li:last").css("background-color","red");
+			 // $("ul li:even").css("background-color","red");
+			  //$("ul li:odd").css("background-color","green");
+			//  $("ul li:not(.a1)").css("background-color","green");
+			$("[value='隐藏']").click(function(){
+				$("ol,ul:visible").css("display","none");
+			});
+			
+			$("[value='显示']").click(function(){
+				$("ol,ul:hidden").css("display","block");
+			});
+			
+			});
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" value="隐藏">
+				<input type="button" value="显示">
+			<ul>
+			 <li>无序111</li>
+			 <li>无序12</li>
+			 <li class="a1">无序13</li>
+			 <li>无序14</li>
+			 <li>无序15</li>
+		</ul>
+		
+		<ol>
+			 <li>有序6</li>
+			 <li>无序17</li>
+			 <li>无序18</li>
+			 <li>无序19</li>
+			 <li>无序10</li>
+		</ol>
+	</body>
+</html>
